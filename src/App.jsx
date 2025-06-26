@@ -205,7 +205,7 @@ function App() {
                 Download Models
               </NavLink>
               &nbsp;&bull;&nbsp;
-              <NavLink href="https://github.com/nadchif/in-browser-llm-inference">Github</NavLink>
+              <NavLink href="https://github.com/SamparkBhol/Browser---llm">Github</NavLink>
             </Box>
           </header>
         </Flex>
