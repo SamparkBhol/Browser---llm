@@ -1,3 +1,4 @@
+/* Global reset and base styling */
 * {
   box-sizing: border-box;
 }
@@ -5,45 +6,66 @@
 .welcome-text {
   padding-top: 20vh;
 }
-.no-outline , .no-outline:hover, .no-outline:focus {
- outline: none;
+
+/* Outline and shadow reset */
+.no-outline,
+.no-outline:hover,
+.no-outline:focus {
+  outline: none;
 }
+
 .no-box-shadow {
- box-shadow: none;
+  box-shadow: none;
 }
+
+/* Chat message container */
 .messages-container {
   height: 65vh;
 }
 
-/* Animations */
+/* Animation: scale-up-center */
 .scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 @keyframes scale-up-center {
   0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
+
+/* Chat loading animation (3-dot wave) */
 .chat-loader {
   margin-left: 1rem;
   width: 40px;
   aspect-ratio: 4;
-  --_g: no-repeat radial-gradient(circle closest-side, currentColor 90%,#0000);
-  background: 
+  --_g: no-repeat radial-gradient(circle closest-side, currentColor 90%, transparent);
+  background:
     var(--_g) 0%   50%,
     var(--_g) 50%  50%,
     var(--_g) 100% 50%;
-  background-size: calc(100%/3) 100%;
+  background-size: calc(100% / 3) 100%;
   animation: l7 1s infinite linear;
 }
 @keyframes l7 {
-    33%{background-size:calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%}
-    50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%}
-    66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%  }
+  33% {
+    background-size:
+      calc(100% / 3) 0%,
+      calc(100% / 3) 100%,
+      calc(100% / 3) 100%;
+  }
+  50% {
+    background-size:
+      calc(100% / 3) 100%,
+      calc(100% / 3) 0%,
+      calc(100% / 3) 100%;
+  }
+  66% {
+    background-size:
+      calc(100% / 3) 100%,
+      calc(100% / 3) 100%,
+      calc(100% / 3) 0%;
+  }
 }
